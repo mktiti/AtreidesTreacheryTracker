@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cards>
+    <card name="Lasgun" type="lasgun" />
+
+    <card name="Chrysknife" type="projectile" />
+    <card name="Maula Pistol" type="projectile" />
+    <card name="Slip Tip" type="projectile" />
+    <card name="Stunner" type="projectile" />
+
+    <card name="Chaumas" type="poison" />
+    <card name="Chaumarky" type="poison" />
+    <card name="Ellaca Drug" type="poison" />
+    <card name="Gom Jabbar" type="poison" />
+
+    <card name="Shield" type="shield" />
+    <card name="Snooper" type="snooper" />
+
+    <card name="Cheap Hero" type="cheap_hero" />
+    <card name="Cheap Heroine" type="cheap_hero" />
+
+    <card name="Tleilaxu Ghola" type="special" />
+    <card name="Family Atomics" type="special" />
+    <card name="Hajr (movement)" type="special" />
+    <card name="Karama" type="special" />
+    <card name="Truthtrance" type="special" />
+    <card name="Weather Control" type="special" />
+
+    <card name="Baliset" type="worthless" />
+    <card name="Jubba Cloak" type="worthless" />
+    <card name="Kulon" type="worthless" />
+    <card name="La La La" type="worthless" />
+    <card name="Trip to Gamont" type="worthless" />
+</cards>

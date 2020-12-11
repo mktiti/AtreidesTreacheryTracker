@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Lasgun",
+    "type": "lasgun"
+  },
+  {
+    "name": "Chrysknife",
+    "type": "projectile"
+  },
+  {
+    "name": "Maula Pistol",
+    "type": "projectile"
+  },
+  {
+    "name": "Slip Tip",
+    "type": "projectile"
+  },
+  {
+    "name": "Stunner",
+    "type": "projectile"
+  },
+  {
+    "name": "Chaumas",
+    "type": "poison"
+  },
+  {
+    "name": "Chaumarky",
+    "type": "poison"
+  },
+  {
+    "name": "Ellaca Drug",
+    "type": "poison"
+  },
+  {
+    "name": "Gom Jabbar",
+    "type": "poison"
+  },
+  {
+    "name": "Shield",
+    "type": "shield"
+  },
+  {
+    "name": "Snooper",
+    "type": "snooper"
+  },
+  {
+    "name": "Cheap Hero",
+    "type": "cheap_hero"
+  },
+  {
+    "name": "Cheap Heroine",
+    "type": "cheap_hero"
+  },
+  {
+    "name": "Tleilaxu Ghola",
+    "type": "special"
+  },
+  {
+    "name": "Family Atomics",
+    "type": "special"
+  },
+  {
+    "name": "Hajr (movement)",
+    "type": "special"
+  },
+  {
+    "name": "Karama",
+    "type": "special"
+  },
+  {
+    "name": "Truthtrance",
+    "type": "special"
+  },
+  {
+    "name": "Weather Control",
+    "type": "special"
+  },
+  {
+    "name": "Baliset",
+    "type": "worthless"
+  },
+  {
+    "name": "Jubba Cloak",
+    "type": "worthless"
+  },
+  {
+    "name": "Kulon",
+    "type": "worthless"
+  },
+  {
+    "name": "La La La",
+    "type": "worthless"
+  },
+  {
+    "name": "Trip to Gamont",
+    "type": "worthless"
+  }
+]
+

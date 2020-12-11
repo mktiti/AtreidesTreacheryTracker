@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Atreides Treachery Tracker</string>
+
+    <string name="faction.name.emperor">Emperor</string>
+    <string name="faction.name.harkonnen">House Harkonnen</string>
+    <string name="faction.name.guild">Space Guild</string>
+    <string name="faction.name.benegesserit">Bene Gesserit</string>
+    <string name="faction.name.fremen">Fremen</string>
+
+    <string name="card.type.name.projectile">Projectile</string>
+    <string name="card.type.name.shield">Projectile shield</string>
+    <string name="card.type.name.poison">Poison</string>
+    <string name="card.type.name.snooper">Poison snooper</string>
+    <string name="card.type.name.lasgun">Lasgun</string>
+    <string name="card.type.name.cheap_hero">Cheap hero</string>
+    <string name="card.type.name.worthless">Worthless</string>
+    <string name="card.type.name.special">Special</string>
+    <string name="title_activity_player_overview">Players</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="faction_icon">Faction icon</string>
+    <string name="add_player_title">Add player</string>
+    <string name="player_remove_undo">Undo</string>
+    <string name="player_removed">Player removed</string>
+    <string name="title_activity_player_hand">PlayerHandActivity</string>
+    <string name="card_icon">Card icon</string>
+    <string name="unknown">Unknown card</string>
+    <string name="unknown_type">Unknown</string>
+    <string name="notes">Notes:</string>
+    <string name="card_removed">Card removed</string>
+    <string name="select_type">Select card type</string>
+    <string name="card_type">Card type:</string>
+    <string name="card">Card:</string>
+    <string name="faction">Faction:</string>
+    <string name="add_card">Add card</string>
+    <string name="add_unknown">Add unknown</string>
+    <string name="add_player">Add player</string>
+
+</resources>
