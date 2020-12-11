@@ -1,4 +1,4 @@
-package com.mktiti.treachery
+package com.mktiti.treachery.ui
 
 import android.content.Context
 import android.content.res.Configuration
@@ -8,6 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.mktiti.treachery.core.Card
+import com.mktiti.treachery.core.CardType
+import com.mktiti.treachery.manager.IconManager
+import com.mktiti.treachery.R
 
 class HandAdapter(
     private val context: Context,

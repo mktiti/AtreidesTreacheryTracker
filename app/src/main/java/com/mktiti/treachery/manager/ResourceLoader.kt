@@ -1,7 +1,9 @@
-package com.mktiti.treachery
+package com.mktiti.treachery.manager
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import com.mktiti.treachery.core.CardType
+import com.mktiti.treachery.core.Player
 import java.util.concurrent.locks.ReentrantLock
 
 object ResourceLoader {
@@ -15,7 +17,10 @@ object ResourceLoader {
 
     private inline fun <reified E : Enum<E>> loadAssetIcons(context: Context, folder: String, mapper: (E) -> String): Map<E, Drawable> {
         return enumValues<E>().map { value ->
-            value to loadImage(context, "icons/$folder/${mapper(value)}.png")
+            value to loadImage(
+                context,
+                "icons/$folder/${mapper(value)}.png"
+            )
         }.toMap()
     }
 
@@ -24,7 +29,10 @@ object ResourceLoader {
 
         if (stored == null) {
             synchronized(lock) {
-                return singleton ?: loadIconManager(context).apply {
+                return singleton
+                    ?: loadIconManager(
+                        context
+                    ).apply {
                     singleton = this
                 }
             }
@@ -34,12 +42,28 @@ object ResourceLoader {
     }
 
     private fun loadIconManager(context: Context): IconManager {
-        val playerIcons = loadAssetIcons(context, "factions", Player::id)
-        val cardTypeIcons = loadAssetIcons(context, "cards", CardType::id)
+        val playerIcons =
+            loadAssetIcons(
+                context,
+                "factions",
+                Player::id
+            )
+        val cardTypeIcons =
+            loadAssetIcons(
+                context,
+                "cards",
+                CardType::id
+            )
 
         return MapIconManager(
-            unknownCard = loadImage(context, "icons/cards/unknown.png"),
-            noCard = loadImage(context, "icons/cards/no_card.png"),
+            unknownCard = loadImage(
+                context,
+                "icons/cards/unknown.png"
+            ),
+            noCard = loadImage(
+                context,
+                "icons/cards/no_card.png"
+            ),
             cardTypeIcons = cardTypeIcons,
             playerIcons = playerIcons
         )

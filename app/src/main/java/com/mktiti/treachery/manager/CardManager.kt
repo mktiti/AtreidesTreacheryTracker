@@ -1,7 +1,9 @@
-package com.mktiti.treachery
+package com.mktiti.treachery.manager
 
 import android.content.Context
 import com.google.gson.Gson
+import com.mktiti.treachery.core.Card
+import com.mktiti.treachery.core.CardType
 import java.io.InputStreamReader
 import java.util.concurrent.locks.ReentrantLock
 
@@ -12,7 +14,10 @@ object CardManager {
         val type: String
     ) {
 
-        fun toCard() = Card(name, CardType.fromId(type))
+        fun toCard() = Card(
+            name,
+            CardType.fromId(type)
+        )
 
     }
 
@@ -26,7 +31,9 @@ object CardManager {
 
         if (stored == null) {
             synchronized(lock) {
-                return cards ?: loadCards(context).apply {
+                return cards
+                    ?: loadCards(context)
+                        .apply {
                     cards = this
                 }
             }

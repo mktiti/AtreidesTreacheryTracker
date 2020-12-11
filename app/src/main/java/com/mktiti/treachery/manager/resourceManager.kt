@@ -1,6 +1,8 @@
-package com.mktiti.treachery
+package com.mktiti.treachery.manager
 
 import android.graphics.drawable.Drawable
+import com.mktiti.treachery.core.CardType
+import com.mktiti.treachery.core.Player
 
 interface IconManager {
 

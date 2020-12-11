@@ -1,4 +1,4 @@
-package com.mktiti.treachery
+package com.mktiti.treachery.ui
 
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
@@ -9,6 +9,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.mktiti.treachery.manager.IconManager
+import com.mktiti.treachery.core.Player
+import com.mktiti.treachery.core.PlayerHand
+import com.mktiti.treachery.R
 
 class PlayerAdapter(
     private val iconManager: IconManager,

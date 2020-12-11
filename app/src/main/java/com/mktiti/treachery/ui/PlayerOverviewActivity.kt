@@ -1,4 +1,4 @@
-package com.mktiti.treachery
+package com.mktiti.treachery.ui
 
 import android.app.Activity
 import android.content.Context
@@ -10,6 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import com.mktiti.treachery.*
+import com.mktiti.treachery.core.HandState
+import com.mktiti.treachery.core.Player
+import com.mktiti.treachery.core.PlayerHand
+import com.mktiti.treachery.manager.ResourceLoader
 import java.util.concurrent.locks.ReentrantLock
 
 class PlayerOverviewActivity : AppCompatActivity() {
@@ -25,7 +30,6 @@ class PlayerOverviewActivity : AppCompatActivity() {
     private lateinit var playerList: RecyclerView
 
     private lateinit var playerAdd: FloatingActionButton
-    // private lateinit var cardAdd: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +44,12 @@ class PlayerOverviewActivity : AppCompatActivity() {
                 ?: Player.values().map { it.startHand() }
 
 
-        playerAdapter = PlayerAdapter(ResourceLoader.getIconManager(this), state, this::playerClick, this::onPlayerDelete)
+        playerAdapter = PlayerAdapter(
+            ResourceLoader.getIconManager(this),
+            state,
+            this::playerClick,
+            this::onPlayerDelete
+        )
         playerList = findViewById<RecyclerView>(R.id.players_list).apply {
             layoutManager = LinearLayoutManager(context)
             adapter = playerAdapter
@@ -49,29 +58,16 @@ class PlayerOverviewActivity : AppCompatActivity() {
             playerAdapter -= it
         }
         ItemTouchHelper(callback).attachToRecyclerView(playerList)
-/*
-        cardAdd = findViewById<FloatingActionButton>(R.id.card_add).apply {
-            setOnClickListener { view ->
-                SelectUtil.promptCard(this@PlayerOverviewActivity, supportFragmentManager) {
-                    Toast.makeText(this@PlayerOverviewActivity, it.niceName, Toast.LENGTH_LONG).show()
-                }
-            }
-        }
-
- */
 
         playerAdd = findViewById<FloatingActionButton>(R.id.player_add).apply {
             setOnClickListener {
                 val available: List<Player> = Player.values().toList() - playerAdapter.stored.map { it.player }
-                SelectUtil.promptHouse(this@PlayerOverviewActivity, available) { player ->
+                SelectUtil.promptHouse(
+                    this@PlayerOverviewActivity,
+                    available
+                ) { player ->
                     addPlayer(player.startHand())
                 }
-
-                /*
-                SelectUtil.promptSelect(this@PlayerOverviewActivity, resources.getString(R.string.add_player_title), available, Player::niceName) { added ->
-                    addPlayer(added.startHand())
-                }
-                 */
             }
         }
 
@@ -102,7 +98,9 @@ class PlayerOverviewActivity : AppCompatActivity() {
     private fun playerClick(player: PlayerHand) {
         val intent = Intent(this, PlayerHandActivity::class.java)
         intent.putExtra(PlayerHandActivity.HAND_DATA_KEY, player.json())
-        startActivityForResult(intent, START_HAND)
+        startActivityForResult(intent,
+            START_HAND
+        )
     }
 
     private fun onPlayerUpdate() {
@@ -119,7 +117,8 @@ class PlayerOverviewActivity : AppCompatActivity() {
         if (requestCode == START_HAND) {
             if (resultCode == Activity.RESULT_OK) {
                 val jsonData = data?.getStringExtra(PlayerHandActivity.HAND_DATA_KEY) ?: return
-                val hand = PlayerHand.parse(jsonData)
+                val hand =
+                    PlayerHand.parse(jsonData)
                 playerAdapter.update(hand)
             }
         }
@@ -128,12 +127,18 @@ class PlayerOverviewActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
-        outState.putString(DATA_KEY, HandState(playerAdapter.stored).json())
+        outState.putString(
+            DATA_KEY, HandState(
+                playerAdapter.stored
+            ).json())
     }
 
     override fun onStop() {
         getPreferences(Context.MODE_PRIVATE)?.edit()?.apply {
-            putString(DATA_KEY, HandState(playerAdapter.stored).json())
+            putString(
+                DATA_KEY, HandState(
+                    playerAdapter.stored
+                ).json())
             apply()
         }
 
@@ -143,7 +148,8 @@ class PlayerOverviewActivity : AppCompatActivity() {
     private fun onPlayerDelete(player: Player, undo: () -> Unit) {
         onPlayerUpdate()
 
-        Snackbar.make(findViewById(R.id.player_coord), R.string.player_removed, Snackbar.LENGTH_LONG).apply {
+        Snackbar.make(findViewById(R.id.player_coord),
+            R.string.player_removed, Snackbar.LENGTH_LONG).apply {
             setAction(R.string.player_remove_undo) {
                 guardedAddAction(player, undo)
             }

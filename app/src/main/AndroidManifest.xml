@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/BaseTheme">
         <activity
-            android:name=".PlayerHandActivity"
+            android:name=".ui.PlayerHandActivity"
             android:label="@string/title_activity_player_hand" />
 
         <activity
-            android:name=".PlayerOverviewActivity"
+            android:name=".ui.PlayerOverviewActivity"
             android:label="@string/app_name">
 
             <intent-filter>

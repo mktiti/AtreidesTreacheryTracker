@@ -1,4 +1,4 @@
-package com.mktiti.treachery
+package com.mktiti.treachery.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -10,6 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import com.mktiti.treachery.*
+import com.mktiti.treachery.core.Card
+import com.mktiti.treachery.core.Player
+import com.mktiti.treachery.core.PlayerHand
+import com.mktiti.treachery.manager.ResourceLoader
 import java.util.concurrent.locks.ReentrantLock
 
 class PlayerHandActivity : AppCompatActivity() {
@@ -49,7 +54,13 @@ class PlayerHandActivity : AppCompatActivity() {
         player = hand.player
         title = player.niceName
 
-        handAdapter = HandAdapter(this, ResourceLoader.getIconManager(this), hand.cards, this::onCardDelete, this::changeCardRequest)
+        handAdapter = HandAdapter(
+            this,
+            ResourceLoader.getIconManager(this),
+            hand.cards,
+            this::onCardDelete,
+            this::changeCardRequest
+        )
         cardList = findViewById<RecyclerView>(R.id.card_list).apply {
             layoutManager = LinearLayoutManager(context)
             adapter = handAdapter
@@ -64,12 +75,6 @@ class PlayerHandActivity : AppCompatActivity() {
                 SelectUtil.promptCard(this@PlayerHandActivity) { card ->
                     addCard(card)
                 }
-
-                /*
-                SelectUtil.promptSelect(this@PlayerHandActivity, resources.getString(R.string.add_card), CardManager.getCards(context), Card::name) { added ->
-                    addCard(added)
-                }
-                 */
             }
         }
 
@@ -123,7 +128,8 @@ class PlayerHandActivity : AppCompatActivity() {
     private fun onCardDelete(undo: () -> Unit) {
         onCardUpdate()
 
-        Snackbar.make(findViewById(R.id.hand_coord), R.string.card_removed, Snackbar.LENGTH_LONG).apply {
+        Snackbar.make(findViewById(R.id.hand_coord),
+            R.string.card_removed, Snackbar.LENGTH_LONG).apply {
             setAction(R.string.player_remove_undo) {
                 guardedAddAction(undo)
             }

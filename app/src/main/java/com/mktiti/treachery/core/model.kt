@@ -1,8 +1,9 @@
-package com.mktiti.treachery
+package com.mktiti.treachery.core
 
 import android.graphics.Color.parseColor
 import com.google.gson.Gson
 
+@Suppress("unused")
 enum class CardType(
         val id: String,
         val niceName: String,
@@ -47,6 +48,7 @@ enum class Player(
     BENE_GESSERIT("benegesserit", "Bene Gesserit"),
     FREMEN("fremen", "Fremen");
 
+    @Suppress("unused")
     fun emptyHand() = PlayerHand(
         player = this,
         cards = emptyList(),
@@ -62,9 +64,9 @@ enum class Player(
 }
 
 data class PlayerHand(
-        val player: Player,
-        val cards: List<Card?>,
-        val note: String
+    val player: Player,
+    val cards: List<Card?>,
+    val note: String
 ) {
 
     companion object {
