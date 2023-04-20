@@ -3,24 +3,26 @@ package com.mktiti.treachery.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.mktiti.treachery.*
-import com.mktiti.treachery.core.Card
-import com.mktiti.treachery.core.Player
-import com.mktiti.treachery.core.PlayerHand
+import com.mktiti.treachery.core.*
 import com.mktiti.treachery.manager.ResourceLoader
 import java.util.concurrent.locks.ReentrantLock
 
 class PlayerHandActivity : AppCompatActivity() {
 
     companion object {
+        const val SHOW_CARD_DETAILS = 1
         const val HAND_DATA_KEY = "hand_data"
+        const val APPLICABLE_PLAYERS_FOR_CARD_TRANSFER = "applicable_players_for_card_transfer"
     }
 
     private val addLock = ReentrantLock()
@@ -28,17 +30,20 @@ class PlayerHandActivity : AppCompatActivity() {
     private lateinit var player: Player
     private lateinit var handAdapter: HandAdapter
     private lateinit var cardList: RecyclerView
+    private lateinit var cardTransfers: MutableList<CardTransfer>
 
     private lateinit var notes: EditText
     private lateinit var cardAdd: FloatingActionButton
     private lateinit var unknownAdd: FloatingActionButton
+
+    private var allHands: HandState = HandState(listOf<PlayerHand>())
 
     private val canAddMore: Boolean
         get() = handAdapter.stored.size < player.maxCards
 
     private val stateString: String
         get() = PlayerHand(
-            player, handAdapter.stored, notes.text.toString()
+            player, handAdapter.stored, notes.text.toString(), cardTransfers
         ).json()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,12 +59,14 @@ class PlayerHandActivity : AppCompatActivity() {
         player = hand.player
         title = player.niceName
 
+        cardTransfers = mutableListOf<CardTransfer>()
+
         handAdapter = HandAdapter(
             this,
             ResourceLoader.getIconManager(this),
             hand.cards,
             this::onCardDelete,
-            this::changeCardRequest
+            this::showCardRequest
         )
         cardList = findViewById<RecyclerView>(R.id.card_list).apply {
             layoutManager = LinearLayoutManager(context)
@@ -88,6 +95,12 @@ class PlayerHandActivity : AppCompatActivity() {
             setText(hand.note)
         }
 
+        val allHandStateJson = savedInstanceState?.getString(APPLICABLE_PLAYERS_FOR_CARD_TRANSFER) ?:
+        intent.extras?.getString(APPLICABLE_PLAYERS_FOR_CARD_TRANSFER) ?:
+        throw IllegalArgumentException("Player hand missing!")
+
+        allHands = HandState.parse(allHandStateJson)
+
         onCardUpdate()
     }
 
@@ -108,10 +121,28 @@ class PlayerHandActivity : AppCompatActivity() {
         }
     }
 
-    private fun changeCardRequest(onUpdate: (Card?) -> Unit) {
-        SelectUtil.promptCard(this@PlayerHandActivity) { card ->
-            onUpdate(card)
-            onCardUpdate()
+    private fun showCardRequest(card: Card, position: Int) {
+        val cardState = CardState(card, position, player)
+        val intent = Intent(this, CardDetailsActivity::class.java)
+        intent.putExtra(CardDetailsActivity.CARD_DATA_KEY, cardState.json())
+        intent.putExtra(PlayerHandActivity.APPLICABLE_PLAYERS_FOR_CARD_TRANSFER, PlayerHand.gson.toJson(allHands))
+        startActivityForResult(intent, PlayerHandActivity.SHOW_CARD_DETAILS)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == PlayerHandActivity.SHOW_CARD_DETAILS) {
+            if (resultCode == Activity.RESULT_OK) {
+                val jsonData = data?.getStringExtra(CardDetailsActivity.CARD_DATA_KEY) ?: return
+                val cardState = CardState.parse(jsonData)
+                if (cardState.newOwner != null) {
+                    cardList.findViewHolderForAdapterPosition(cardState.cardPosition)?.let {
+                        handAdapter.cardTransferred(it)
+                        cardTransfers.add(CardTransfer(cardState.owner, cardState.newOwner, cardState.card))
+                    }
+                }
+            }
         }
     }
 

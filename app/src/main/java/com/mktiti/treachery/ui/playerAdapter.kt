@@ -13,6 +13,7 @@ import com.mktiti.treachery.manager.IconManager
 import com.mktiti.treachery.core.Player
 import com.mktiti.treachery.core.PlayerHand
 import com.mktiti.treachery.R
+import com.mktiti.treachery.core.Card
 
 class PlayerAdapter(
     private val iconManager: IconManager,
@@ -27,7 +28,11 @@ class PlayerAdapter(
         val cardsLayout: LinearLayout = view.findViewById(R.id.cards_layout)
     }
 
-    private val players = initPlayers.toMutableList()
+    private val players = if(initPlayers.isNotEmpty())
+                                initPlayers.toMutableList()
+                            else
+                                mutableListOf<PlayerHand>(PlayerHand(Player.LICITATION, listOf<Card?>(), "")
+                );
 
     val stored: List<PlayerHand>
         get() = players
@@ -101,6 +106,20 @@ class PlayerAdapter(
         }
     }
 
+    fun changeOwner(card: Card, previousOwner: Player, newOwner: Player) {
+        val previousOwnerIndex = players.withIndex().find { it.value.player == previousOwner }?.index
+        val newOwnerIndex = players.withIndex().find { it.value.player == newOwner }?.index
+        if (previousOwnerIndex != null && newOwnerIndex != null) {
+            val previousOwnerHand = PlayerHand(players[previousOwnerIndex].player, players[previousOwnerIndex].cards - card, players[previousOwnerIndex].note)
+            players[previousOwnerIndex] = previousOwnerHand
+
+            val newOwnerHand = PlayerHand(players[newOwnerIndex].player, players[newOwnerIndex].cards + card, players[newOwnerIndex].note)
+            players[newOwnerIndex] = newOwnerHand
+
+            notifyItemChanged(previousOwnerIndex)
+            notifyItemChanged(newOwnerIndex)
+        }
+    }
 }
 
 class SwipeDeleteCallback(

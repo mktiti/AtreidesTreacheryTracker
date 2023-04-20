@@ -16,9 +16,9 @@ import com.mktiti.treachery.R
 class HandAdapter(
     private val context: Context,
     private val iconManager: IconManager,
-    initPlayers: List<Card?>,
+    initCards: List<Card?>,
     private val deleteCallback: (() -> Unit) -> Unit,
-    private val changePrompt: ((Card?) -> Unit) -> Unit,
+    private val cardClickCallback: (Card, Int) -> Unit,
 ) : RecyclerView.Adapter<HandAdapter.CardHolder>() {
 
     class CardHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -27,7 +27,7 @@ class HandAdapter(
         val type: TextView = view.findViewById(R.id.type_name)
     }
 
-    private val cards = initPlayers.toMutableList()
+    private val cards = initCards.toMutableList()
 
     val stored: List<Card?>
         get() = cards
@@ -62,15 +62,13 @@ class HandAdapter(
                 holder.name.text = name
                 holder.name.setTextColor(colorMapper(card.type))
                 holder.icon.setImageDrawable(iconManager[type])
-                holder.type.text = type.niceName
+                holder.type.text = card.tags
             }
         }
 
         holder.itemView.setOnClickListener {
-            changePrompt { new ->
-                cards[position] = new
-                notifyItemChanged(position)
-            }
+            cards[position]?.let { card -> cardClickCallback(card, position) }
+
         }
     }
 
@@ -87,6 +85,12 @@ class HandAdapter(
             cards.add(pos, removed)
             notifyItemInserted(pos)
         }
+    }
+
+    fun cardTransferred(viewHolder: RecyclerView.ViewHolder) {
+        val pos = viewHolder.adapterPosition
+        val removed = cards.removeAt(pos)
+        notifyItemRemoved(pos)
     }
 
 }

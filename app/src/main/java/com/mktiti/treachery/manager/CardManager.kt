@@ -11,12 +11,16 @@ object CardManager {
 
     private data class CardData(
         val name: String,
-        val type: String
+        val type: String,
+        val tags: String,
+        val description: String
     ) {
 
         fun toCard() = Card(
             name,
-            CardType.fromId(type)
+            CardType.fromId(type),
+            tags,
+            description
         )
 
     }

@@ -11,7 +11,7 @@ enum class CardType(
         val darkColor: Int,
 ) {
 
-    LASGUN("lasgun", "Weapon - Special", "#8e2d00"),
+    SPECIAL_WEAPON("special_weapon", "Weapon - Special", "#8e2d00"),
     PROJECTILE("projectile", "Weapon - Projectile", "#8e2d00"),
     SHIELD("shield", "Defense - Projectile", "#142e53", "#056DFF"),
     POISON("poison", "Weapon - Poison", "#8e2d00"),
@@ -32,7 +32,9 @@ enum class CardType(
 
 data class Card(
     val name: String,
-    val type: CardType
+    val type: CardType,
+    val tags: String,
+    val description: String
 )
 
 enum class Player(
@@ -41,12 +43,18 @@ enum class Player(
     val maxCards: Int = 4,
     private val startingCards: Int = 1
 ) {
-
+    LICITATION("licitation", "Licitation", 8),
     EMPEROR("emperor", "Emperor"),
     HARKONNEN("harkonnen", "Harkonnen", 8, 2),
     GUILD("guild", "Spacing Guild"),
     BENE_GESSERIT("benegesserit", "Bene Gesserit"),
-    FREMEN("fremen", "Fremen");
+    FREMEN("fremen", "Fremen"),
+    IXIANS("ixians", "Ixians"),
+    TLEILAXU("tleilaxu", "Tleilaxu"),
+    CHOAM("choam", "Choam"),
+    RICHESE("richese", "Richese");
+
+
 
     @Suppress("unused")
     fun emptyHand() = PlayerHand(
@@ -63,10 +71,17 @@ enum class Player(
 
 }
 
+data class CardTransfer(
+    var previousOwner: Player,
+    val newOwner: Player,
+    val card: Card
+)
+
 data class PlayerHand(
     val player: Player,
     val cards: List<Card?>,
-    val note: String
+    val note: String,
+    var cardTransfers: MutableList<CardTransfer> = mutableListOf<CardTransfer>()
 ) {
 
     companion object {
@@ -91,5 +106,21 @@ data class HandState(
     }
 
     fun json(): String = PlayerHand.gson.toJson(this)
+
+}
+
+data class CardState(
+    val card: Card,
+    val cardPosition: Int,
+    var owner: Player,
+    val newOwner: Player? = null // when card was transferred
+) {
+    companion object {
+        val gson = Gson()
+
+        fun parse(jsonValue: String): CardState = gson.fromJson(jsonValue, CardState::class.java)
+    }
+
+    fun json(): String = gson.toJson(this)
 
 }
