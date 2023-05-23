@@ -89,8 +89,6 @@ class HandAdapter(
 
     fun cardTransferred(viewHolder: RecyclerView.ViewHolder) {
         val pos = viewHolder.adapterPosition
-        val removed = cards.removeAt(pos)
         notifyItemRemoved(pos)
     }
-
 }
