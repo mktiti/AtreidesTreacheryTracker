@@ -32,38 +32,38 @@
   {
     "name": "Basilia Weapon",
     "type": "poison",
-    "tags": "Weapon - Posion",
+    "tags": "Weapon - Poison",
     "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Chaumas",
     "type": "poison",
-    "tags": "Weapon - poison",
+    "tags": "Weapon - Poison",
     "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Chaumarky",
     "type": "poison",
-    "tags": "Weapon - poison",
+    "tags": "Weapon - Poison",
     "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Ellaca Drug",
     "type": "poison",
-    "tags": "Weapon - poison",
+    "tags": "Weapon - Poison",
     "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Gom Jabbar",
     "type": "poison",
-    "tags": "Weapon - Posion",
+    "tags": "Weapon - Poison",
     "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Poison Tooth",
     "type": "poison",
     "tags": "Weapon - Poison - Special",
-    "description": "Play as part of your Battle Plan.\n\nKills both leaders, and is not stopped by a Snooper.\n\nAfter seeing the battle results, you may choose not to use this weapon. If you win this battle and did not use this card, you may keep it. Otherwise, it is dicarded."
+    "description": "Play as part of your Battle Plan.\n\nKills both leaders, and is not stopped by a Snooper.\n\nAfter seeing the battle results, you may choose not to use this weapon. If you win this battle and did not use this card, you may keep it. Otherwise, it is discarded."
   },
   {
     "name": "Shield",
@@ -110,14 +110,14 @@
   {
     "name": "Poison Blade",
     "type": "special_weapon",
-    "tags": "Weapon - Special",
-    "description": "Play as part of your Battle Plan.\n\nThis weapon counts as both projectile and poison.\n\nYou may keep this card if you win this battle."
+    "tags": "Weapon - Projectile - Poison - Special",
+    "description": "Play as part of your Battle Plan.\n\nThis weapon counts as both Projectile and Poison.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Weirding Way",
     "type": "special_weapon",
-    "tags": "Weapon - Defense - Special",
-    "description": "Play as part of your Battle Plan.\n\nCounts as a projectile weapon, unless played with another weapon. In that case, it counts as a projectile defense.\n\nYou may keep this card if you win this battle."
+    "tags": "Weapon - Defense - Projectile - Special",
+    "description": "Play as part of your Battle Plan.\n\nCounts as a Projectile weapon, unless played with another weapon. In that case, it counts as a Projectile defense.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Amal",
@@ -128,8 +128,8 @@
   {
     "name": "Chemistry",
     "type": "special",
-    "tags": "Defense - Weapon - Special",
-    "description": "Play as part of your Battle Plan.\n\nCounts as a poison defense, unless played with another defense. In that case, it counts as a poison weapon.\n\nYou may keep this card if you win this battle."
+    "tags": "Defense - Weapon - Poison - Special",
+    "description": "Play as part of your Battle Plan.\n\nCounts as a Poison defense, unless played with another defense. In that case, it counts as a Poison weapon.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Distrans",
@@ -141,13 +141,13 @@
     "name": "Family Atomics",
     "type": "special",
     "tags": "Special",
-    "description": "After the first game turn, play after the storm movements is calculated, but before the storm is moved, but only if you have one or more forces on the Shield Wall or a territory adjacent to the Shield Wall with no storm between your sector and the Wall.\n\nAll forces on the Shield Wall are destroyed.\n\nPlace the Destroyed Shield Wall tokens on the Shield Wall as a reminder. The Imperial Basin, Arrakeen and Carthag are no longer protected from the Storm for the rest of the game."
+    "description": "After the first game turn, play after the storm movement is calculated, but before the storm is moved, but only if you have one or more forces on the Shield Wall or a territory adjacent to the Shield Wall with no storm between your sector and the Wall.\n\nAll forces on the Shield Wall are destroyed.\n\nPlace the Destroyed Shield Wall token on the Shield Wall as a reminder. The Imperial Basin, Arrakeen and Carthag are no longer protected from the Storm for the rest of the game."
   },
   {
     "name": "Hajr (movement)",
     "type": "special",
     "tags": "Special - Movement",
-    "description": "Play during Movement Phase.\n\nMake an extra on-planet force movement subject to normal movement rules.\n\nThe forces you move may be a group you've already moved this phase or another group."
+    "description": "Play during the Movement Phase.\n\nMake an extra on-planet force movement subject to normal movement rules.\n\nThe forces you move may be a group you've already moved this phase or another group."
   },
   {
     "name": "Harvester",
@@ -189,7 +189,7 @@
     "name": "Thumper",
     "type": "special",
     "tags": "Spice Blow - Special",
-    "description": "Play at beginning of Spice Blow Phase instead of revealing the next Spice Blow card. Causes a Sandworm to appear.\n\nPlay proceeds as though Shai-Hulud has been revealed."
+    "description": "Play at beginning of the Spice Blow Phase instead of revealing the next Spice Blow card. Causes a Sandworm to appear.\n\nPlay proceeds as though Shai-Hulud has been revealed."
   },
   {
     "name": "Truthtrance",
@@ -212,8 +212,8 @@
   {
     "name": "Shield Snooper",
     "type": "special",
-    "tags": "Defense - Special",
-    "description": "Play as part of your Battle Plan.\n\nCounts as both a Shield (projectile defense) and Snooper (poison defense).\n\nYou may keep this card if you win this battle."
+    "tags": "Defense - Projectile - Poison - Special",
+    "description": "Play as part of your Battle Plan.\n\nCounts as both a Shield (Projectile defense) and Snooper (Poison defense).\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Semuta Drug",
@@ -225,7 +225,7 @@
     "name": "Stone Burner",
     "type": "special",
     "tags": "Weapon - Special",
-    "description": "You choose after the battle plans are revealed: Both leaders are kill, OR both leaders in this battle do not cound their strength if they otherwise survived. In either case, the player with the higher number of undialed force tokens wins the battle. Dialed forces are lost normally. Discard after use."
+    "description": "You choose after the battle plans are revealed: Both leaders are killed, OR both leaders in this battle do not count their strength if they otherwise survived. In either case, the player with the higher number of undialed force tokens wins the battle. Dialed forces are lost normally. Discard after use."
   },
   {
     "name": "Baliset",
@@ -236,7 +236,7 @@
   {
     "name": "Jubba Cloak",
     "type": "worthless",
-    "tags": "worthless",
+    "tags": "Worthless Card",
     "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan."
   },
   {
@@ -260,7 +260,7 @@
   {
     "name": "Trip to Gamont",
     "type": "worthless",
-    "tags": "worthless",
+    "tags": "Worthless Card",
     "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan."
   }
 ]
