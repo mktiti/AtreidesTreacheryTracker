@@ -1,5 +1,11 @@
 [
   {
+    "name": "Karama",
+    "type": "karama",
+    "tags": "Special",
+    "description": "After factions complete their 'At Start' actions and after game set-up, use this card to stop a player from using one of their faction advantages when they attempt to use it. Stops the use of that advantage during game phase.\n\nOr, this card may be used to do either of these things when appropriate:\n\n-Purchase a shipment of forces onto the planet at Guild rates (1/2 normal) paid to the Spice Bank, or\n\n-Purchase a Treachery Card without paying spice for it\n\nCannot be used to stop a win condition advantage. Discard after use."
+  },
+  {
     "name": "Chrysknife",
     "type": "projectile",
     "tags": "Weapon - Projectile",
@@ -78,28 +84,10 @@
     "description": "Play as part of your Battle Plan.\n\nProtects your leader from a poison weapon in this battle.\n\nYou may keep this card if you win this battle."
   },
   {
-    "name": "Portable Snooper",
-    "type": "snooper",
-    "tags": "Defense - Poison",
-    "description": "Protects your leader from a poison weapon. You may play this after revealing your Battle Plan if you did not play a defense (unless prevented by a Bene Gesserit Voice). You may not play this if you played a weapon and a worthless card in your Battle Plan. Discard after use."
-  },
-  {
     "name": "Cheap Hero",
     "type": "cheap_hero",
     "tags": "Special - Leader",
     "description": "Play as a leader with zero strength on your Battle Plan and discard after the battle.\n\nYou may also play a weapon and defense. The cheap hero may be played in place of a leader or when you have no leaders available."
-  },
-  {
-    "name": "Karama",
-    "type": "special",
-    "tags": "Special",
-    "description": "After factions complete their 'At Start' actions and after game set-up, use this card to stop a player from using one of their faction advantages when they attempt to use it. Stops the use of that advantage during game phase.\n\nOr, this card may be used to do either of these things when appropriate:\n\n-Purchase a shipment of forces onto the planet at Guild rates (1/2 normal) paid to the Spice Bank, or\n\n-Purchase a Treachery Card without paying spice for it\n\nCannot be used to stop a win condition advantage. Discard after use."
-  },
-  {
-    "name": "Artillery Strike",
-    "type": "special_weapon",
-    "tags": "Weapon - Special",
-    "description": "Play as part of your Battle Plan.\n\nKills both leaders. Both players may use Shields to protect their leader against the Artillery Strike.\n\nSurviving (shielded) leaders do not count towards the battle total; the side that dialed higher wins the battle. No spice is collected for any leader killed in this battle. Discard after use."
   },
   {
     "name": "Lasgun",
@@ -126,12 +114,6 @@
     "description": "At the beginning of any phase, cause all players to discard half of the spice behind their shields, rounded up, to the Spice Bank."
   },
   {
-    "name": "Chemistry",
-    "type": "special",
-    "tags": "Defense - Weapon - Poison - Special",
-    "description": "Play as part of your Battle Plan.\n\nCounts as a Poison defense, unless played with another defense. In that case, it counts as a Poison weapon.\n\nYou may keep this card if you win this battle."
-  },
-  {
     "name": "Distrans",
     "type": "special",
     "tags": "Special",
@@ -154,30 +136,6 @@
     "type": "special",
     "tags": "Spice Blow - Special",
     "description": "Play just after a spice blow comes up. Doubles the spice blow. Place double the amount of spice in the territory."
-  },
-  {
-    "name": "Juice of Sappho",
-    "type": "special",
-    "tags": "Special",
-    "description": "Choose one:\n\nPlay this card to be considered the aggressor in a battle, or\n\nGo first for any phase or action that requires turn order, or\n\nGo last for any phase or action that requires turn order (even superseding Guild).\n\nPlay the card in the applicable phase when you wish to intervene. Discard after use."
-  },
-  {
-    "name": "Mirror Weapon",
-    "type": "special",
-    "tags": "Weapon - Special",
-    "description": "Play as part of your Battle Plan.\n\nCopies your opponent's weapon, if they reveal one (and if their Treachery Card counts as a weapon).\n\nYou must use your weapon first if order matters. Discard after use."
-  },
-  {
-    "name": "Nullentropy Box",
-    "type": "special",
-    "tags": "Special",
-    "description": "At any time, pay 2 spice to the Spice Bank, then take the Treachery Card discard pile and secretly search it for any card (other than Nullentropy Box) to add to your hand. Shuffle the discard pile afterward and then return it face up, discarding this card on top."
-  },
-  {
-    "name": "Ornithopter",
-    "type": "special",
-    "tags": "Special - Movement",
-    "description": "As part of your movement, you may move one group of your forces up to 3 territories, or move 2 different groups of your forces up to your normal movement. Discard after use."
   },
   {
     "name": "Residual poison",
@@ -210,22 +168,16 @@
     "description": "After the first game turn, play during the Storm Phase before the Storm Marker is moved.\n\nWhen you play this card, you control the storm this phase and may move it from 0 to 10 sectors in a counterclockwise direction."
   },
   {
+    "name": "Chemistry",
+    "type": "special_defense",
+    "tags": "Defense - Weapon - Poison - Special",
+    "description": "Play as part of your Battle Plan.\n\nCounts as a Poison defense, unless played with another defense. In that case, it counts as a Poison weapon.\n\nYou may keep this card if you win this battle."
+  },
+  {
     "name": "Shield Snooper",
-    "type": "special",
+    "type": "special_defense",
     "tags": "Defense - Projectile - Poison - Special",
     "description": "Play as part of your Battle Plan.\n\nCounts as both a Shield (Projectile defense) and Snooper (Poison defense).\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Semuta Drug",
-    "type": "special",
-    "tags": "Special",
-    "description": "Take a Treachery Card immediately after another player discards it. and add it to your hand.\n\nIf multiple cards are discarded at the same time, you choose which card to take. Discard after use."
-  },
-  {
-    "name": "Stone Burner",
-    "type": "special",
-    "tags": "Weapon - Special",
-    "description": "You choose after the battle plans are revealed: Both leaders are killed, OR both leaders in this battle do not count their strength if they otherwise survived. In either case, the player with the higher number of undialed force tokens wins the battle. Dialed forces are lost normally. Discard after use."
   },
   {
     "name": "Baliset",
@@ -262,6 +214,54 @@
     "type": "worthless",
     "tags": "Worthless Card",
     "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan."
+  },
+  {
+    "name": "Artillery Strike",
+    "type": "richese",
+    "tags": "Weapon - Special",
+    "description": "Play as part of your Battle Plan.\n\nKills both leaders. Both players may use Shields to protect their leader against the Artillery Strike.\n\nSurviving (shielded) leaders do not count towards the battle total; the side that dialed higher wins the battle. No spice is collected for any leader killed in this battle. Discard after use."
+  },
+  {
+    "name": "Juice of Sappho",
+    "type": "richese",
+    "tags": "Special",
+    "description": "Choose one:\n\nPlay this card to be considered the aggressor in a battle, or\n\nGo first for any phase or action that requires turn order, or\n\nGo last for any phase or action that requires turn order (even superseding Guild).\n\nPlay the card in the applicable phase when you wish to intervene. Discard after use."
+  },
+  {
+    "name": "Mirror Weapon",
+    "type": "richese",
+    "tags": "Weapon - Special",
+    "description": "Play as part of your Battle Plan.\n\nCopies your opponent's weapon, if they reveal one (and if their Treachery Card counts as a weapon).\n\nYou must use your weapon first if order matters. Discard after use."
+  },
+  {
+    "name": "Nullentropy Box",
+    "type": "richese",
+    "tags": "Special",
+    "description": "At any time, pay 2 spice to the Spice Bank, then take the Treachery Card discard pile and secretly search it for any card (other than Nullentropy Box) to add to your hand. Shuffle the discard pile afterward and then return it face up, discarding this card on top."
+  },
+  {
+    "name": "Ornithopter",
+    "type": "richese",
+    "tags": "Special - Movement",
+    "description": "As part of your movement, you may move one group of your forces up to 3 territories, or move 2 different groups of your forces up to your normal movement. Discard after use."
+  },
+  {
+    "name": "Portable Snooper",
+    "type": "richese",
+    "tags": "Defense - Poison",
+    "description": "Protects your leader from a poison weapon. You may play this after revealing your Battle Plan if you did not play a defense (unless prevented by a Bene Gesserit Voice). You may not play this if you played a weapon and a worthless card in your Battle Plan. Discard after use."
+  },
+  {
+    "name": "Semuta Drug",
+    "type": "richese",
+    "tags": "Special",
+    "description": "Take a Treachery Card immediately after another player discards it. and add it to your hand.\n\nIf multiple cards are discarded at the same time, you choose which card to take. Discard after use."
+  },
+  {
+    "name": "Stone Burner",
+    "type": "richese",
+    "tags": "Weapon - Special",
+    "description": "You choose after the battle plans are revealed: Both leaders are killed, OR both leaders in this battle do not count their strength if they otherwise survived. In either case, the player with the higher number of undialed force tokens wins the battle. Dialed forces are lost normally. Discard after use."
   }
 ]
 

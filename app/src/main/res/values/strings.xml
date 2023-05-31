@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Atreides Treachery Tracker</string>
 
-    <string name="faction.name.licitation">Licitation</string>
+    <string name="faction.name.bidding">Bidding</string>
     <string name="faction.name.emperor">Emperor</string>
     <string name="faction.name.harkonnen">House Harkonnen</string>
     <string name="faction.name.guild">Space Guild</string>

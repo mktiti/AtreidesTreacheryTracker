@@ -120,8 +120,8 @@ class PlayerOverviewActivity : AppCompatActivity() {
                 val hand = PlayerHand.parse(jsonData)
                 playerAdapter.update(hand)
 
-                hand.cardTransfers.forEach { cardTranfer ->
-                    playerAdapter.changeOwner(cardTranfer.card, cardTranfer.previousOwner, cardTranfer.newOwner)
+                hand.cardTransfers.forEach { cardTransfer ->
+                    playerAdapter.changeOwner(cardTransfer.card, cardTransfer.previousOwner, cardTransfer.newOwner)
                 }
             }
         }

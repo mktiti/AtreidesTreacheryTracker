@@ -18,7 +18,10 @@ enum class CardType(
     SNOOPER("snooper", "Defense - Poison", "#142e53", "#056DFF"),
     CHEAP_HERO("cheap_hero", "Special - Leader", "#404a10", "#A1B636"),
     WORTHLESS("worthless", "Worthless Card", "#988e5d"),
-    SPECIAL("special", "Special", "#404a10");
+    SPECIAL("special", "Special", "#404a10"),
+    SPECIAL_DEFENSE("special_defense", "Defense - Special", "#404a10"),
+    KARAMA("karama", "Karama", "#404a10"),
+    RICHESE("richese", "Richese", "#ad2434");
 
     constructor(id: String, name: String, lightColor: String, darkColor: String) : this(id, name, parseColor(lightColor), parseColor(darkColor))
 
@@ -43,7 +46,7 @@ enum class Player(
     val maxCards: Int = 4,
     private val startingCards: Int = 1
 ) {
-    LICITATION("licitation", "Licitation", 8),
+    BIDDING("bidding", "Bidding", 8),
     EMPEROR("emperor", "Emperor"),
     HARKONNEN("harkonnen", "Harkonnen", 8, 2),
     GUILD("guild", "Spacing Guild"),

@@ -31,7 +31,7 @@ class PlayerAdapter(
     private val players = if(initPlayers.isNotEmpty())
                                 initPlayers.toMutableList()
                             else
-                                mutableListOf<PlayerHand>(PlayerHand(Player.LICITATION, listOf<Card?>(), "")
+                                mutableListOf<PlayerHand>(PlayerHand(Player.BIDDING, listOf<Card?>(), "")
                 );
 
     val stored: List<PlayerHand>

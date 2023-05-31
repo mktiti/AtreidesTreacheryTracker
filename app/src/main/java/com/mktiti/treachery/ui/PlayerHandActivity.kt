@@ -138,6 +138,7 @@ class PlayerHandActivity : AppCompatActivity() {
                 val cardState = CardState.parse(jsonData)
                 if (cardState.newOwner != null) {
                     cardList.findViewHolderForAdapterPosition(cardState.cardPosition)?.let {
+                        Log.v("card position", cardState.cardPosition.toString())
                         handAdapter.cardTransferred(it)
                         cardTransfers.add(CardTransfer(cardState.owner, cardState.newOwner, cardState.card))
                     }
