@@ -29,9 +29,10 @@ class CardDetailsActivity : AppCompatActivity() {
     private var cardPosition: Int = 0
     private lateinit var owner: Player
     private var newOwner: Player? = null
-    //private lateinit var title: TextView
     private lateinit var tags: TextView
     private lateinit var description: TextView
+    private lateinit var specialUsage: TextView
+
 
     private lateinit var changeOwnerButton: FloatingActionButton
     private val changeOwnerLock = ReentrantLock()
@@ -69,6 +70,11 @@ class CardDetailsActivity : AppCompatActivity() {
         }
         description = findViewById<TextView>(R.id.card_description).apply {
             text = card.description
+        }
+        card.choam?.let {
+            specialUsage = findViewById<TextView>(R.id.special_usage).apply {
+                text = "Choam only:\n" + card.choam
+            }
         }
 
         changeOwnerButton = findViewById<FloatingActionButton>(R.id.change_owner).apply {

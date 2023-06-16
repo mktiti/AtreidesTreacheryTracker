@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +16,7 @@ import com.mktiti.treachery.core.Player
 import com.mktiti.treachery.core.PlayerHand
 import com.mktiti.treachery.manager.ResourceLoader
 import java.util.concurrent.locks.ReentrantLock
+
 
 class PlayerOverviewActivity : AppCompatActivity() {
 

@@ -36,7 +36,7 @@ class PlayerHandActivity : AppCompatActivity() {
     private lateinit var cardAdd: FloatingActionButton
     private lateinit var unknownAdd: FloatingActionButton
 
-    private var allHands: HandState = HandState(listOf<PlayerHand>())
+    private var allHands: HandState = HandState(listOf())
 
     private val canAddMore: Boolean
         get() = handAdapter.stored.size < player.maxCards
@@ -59,7 +59,7 @@ class PlayerHandActivity : AppCompatActivity() {
         player = hand.player
         title = player.niceName
 
-        cardTransfers = mutableListOf<CardTransfer>()
+        cardTransfers = mutableListOf()
 
         handAdapter = HandAdapter(
             this,
@@ -125,20 +125,19 @@ class PlayerHandActivity : AppCompatActivity() {
         val cardState = CardState(card, position, player)
         val intent = Intent(this, CardDetailsActivity::class.java)
         intent.putExtra(CardDetailsActivity.CARD_DATA_KEY, cardState.json())
-        intent.putExtra(PlayerHandActivity.APPLICABLE_PLAYERS_FOR_CARD_TRANSFER, PlayerHand.gson.toJson(allHands))
-        startActivityForResult(intent, PlayerHandActivity.SHOW_CARD_DETAILS)
+        intent.putExtra(APPLICABLE_PLAYERS_FOR_CARD_TRANSFER, PlayerHand.gson.toJson(allHands))
+        startActivityForResult(intent, SHOW_CARD_DETAILS)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == PlayerHandActivity.SHOW_CARD_DETAILS) {
+        if (requestCode == SHOW_CARD_DETAILS) {
             if (resultCode == Activity.RESULT_OK) {
                 val jsonData = data?.getStringExtra(CardDetailsActivity.CARD_DATA_KEY) ?: return
                 val cardState = CardState.parse(jsonData)
                 if (cardState.newOwner != null) {
                     cardList.findViewHolderForAdapterPosition(cardState.cardPosition)?.let {
-                        Log.v("card position", cardState.cardPosition.toString())
                         handAdapter.cardTransferred(it)
                         cardTransfers.add(CardTransfer(cardState.owner, cardState.newOwner, cardState.card))
                     }

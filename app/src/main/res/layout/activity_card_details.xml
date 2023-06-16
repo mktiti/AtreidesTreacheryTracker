@@ -56,6 +56,16 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:text="Play as a part of your plan" />
+
+            <TextView
+                android:id="@+id/special_usage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingTop="30dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

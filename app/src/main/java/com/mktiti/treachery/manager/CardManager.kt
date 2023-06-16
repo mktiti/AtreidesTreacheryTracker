@@ -13,14 +13,16 @@ object CardManager {
         val name: String,
         val type: String,
         val tags: String,
-        val description: String
+        val description: String,
+        val choam: String?
     ) {
 
         fun toCard() = Card(
             name,
             CardType.fromId(type),
             tags,
-            description
+            description,
+            choam
         )
 
     }

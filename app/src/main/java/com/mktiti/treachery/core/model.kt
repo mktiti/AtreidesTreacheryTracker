@@ -20,6 +20,10 @@ enum class CardType(
     WORTHLESS("worthless", "Worthless Card", "#988e5d"),
     SPECIAL("special", "Special", "#404a10"),
     SPECIAL_DEFENSE("special_defense", "Defense - Special", "#404a10"),
+    GHOLA("ghola", "Special", "#8e2d00"),
+    FAMILY_ATOMICS("truthtrance", "Special", "#8e2d00"),
+    HAJR("hajr", "Special - Movement", "#8e2d00"),
+    TRUTHTRANCE("truthtrance", "Special", "#8e2d00"),
     KARAMA("karama", "Karama", "#404a10"),
     RICHESE("richese", "Richese", "#ad2434");
 
@@ -37,7 +41,8 @@ data class Card(
     val name: String,
     val type: CardType,
     val tags: String,
-    val description: String
+    val description: String,
+    val choam: String?
 )
 
 enum class Player(
@@ -54,7 +59,7 @@ enum class Player(
     FREMEN("fremen", "Fremen"),
     IXIANS("ixians", "Ixians"),
     TLEILAXU("tleilaxu", "Tleilaxu"),
-    CHOAM("choam", "Choam"),
+    CHOAM("choam", "Choam", 5),
     RICHESE("richese", "Richese");
 
 

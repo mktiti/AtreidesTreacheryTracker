@@ -114,12 +114,6 @@
     "description": "At the beginning of any phase, cause all players to discard half of the spice behind their shields, rounded up, to the Spice Bank."
   },
   {
-    "name": "Distrans",
-    "type": "special",
-    "tags": "Special",
-    "description": "Give another player a Treachery Card from your hand (if that player's hand is not full). Play at any time (other than during a bid). Discard after use."
-  },
-  {
     "name": "Family Atomics",
     "type": "special",
     "tags": "Special",
@@ -127,7 +121,7 @@
   },
   {
     "name": "Hajr (movement)",
-    "type": "special",
+    "type": "hajr",
     "tags": "Special - Movement",
     "description": "Play during the Movement Phase.\n\nMake an extra on-planet force movement subject to normal movement rules.\n\nThe forces you move may be a group you've already moved this phase or another group."
   },
@@ -138,12 +132,6 @@
     "description": "Play just after a spice blow comes up. Doubles the spice blow. Place double the amount of spice in the territory."
   },
   {
-    "name": "Residual poison",
-    "type": "special",
-    "tags": "Special",
-    "description": "Play on your opponent before choosing leaders in a battle. That faction will lose one of their available leaders at random to the tanks. No spice is collected for it.\n\nDiscard after use."
-  },
-  {
     "name": "Thumper",
     "type": "special",
     "tags": "Spice Blow - Special",
@@ -151,13 +139,13 @@
   },
   {
     "name": "Truthtrance",
-    "type": "special",
+    "type": "truthtrance",
     "tags": "Special",
     "description": "Publicly ask one player a single yes/no question about the game that must be answered publicly. The game pauses until an answer is given.\n\nThe player must answer 'yes' or 'no' truthfully."
   },
   {
     "name": "Tleilaxu Ghola",
-    "type": "special",
+    "type": "ghola",
     "tags": "Special",
     "description": "Play at any time to gain an extra revival.\n\nYou may immediately revive 1 of your leaders regardless of how many leaders you have in the tanks or up to 5 of your forces from the Tleilaxu Tanks to your reserves at no cost in spice.\n\nYou still get your normal revivals."
   },
@@ -183,49 +171,67 @@
     "name": "Baliset",
     "type": "worthless",
     "tags": "Worthless Card",
-    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan."
+    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
+    "choam": "Prevent a player from moving forces into a territory you occupy\nduring Shipment and Movement. They may ship in normally."
   },
   {
     "name": "Jubba Cloak",
     "type": "worthless",
     "tags": "Worthless Card",
-    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan."
+    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
+    "choam": "Prevent a loss of your forces in one territory to the Storm\nwhen it moves."
   },
   {
     "name": "Kull Wahad",
     "type": "worthless",
     "tags": "Worthless Card",
-    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan."
+    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
+    "choam": "Prevent a player from playing a Karama card this phase as\nthey attempt to do so."
   },
   {
     "name": "Kulon",
     "type": "worthless",
     "tags": "Worthless Card",
-    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan."
+    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
+    "choam": "Move your forces one extra territory on your turn in Shipping and\nMovement."
   },
   {
     "name": "La, La, La",
     "type": "worthless",
     "tags": "Worthless Card",
-    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan."
+    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
+    "choam": "Prevent a player from taking Free Revival during Revival."
   },
   {
     "name": "Trip to Gamont",
     "type": "worthless",
     "tags": "Worthless Card",
-    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan."
+    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
+    "choam": "Send any 1 force belonging to another player to that\nplayer’s reserves during the Mentat Pause"
   },
   {
     "name": "Artillery Strike",
-    "type": "richese",
+    "type": "special_weapon",
     "tags": "Weapon - Special",
     "description": "Play as part of your Battle Plan.\n\nKills both leaders. Both players may use Shields to protect their leader against the Artillery Strike.\n\nSurviving (shielded) leaders do not count towards the battle total; the side that dialed higher wins the battle. No spice is collected for any leader killed in this battle. Discard after use."
+  },
+  {
+    "name": "Distrans",
+    "type": "richese",
+    "tags": "Special",
+    "description": "Give another player a Treachery Card from your hand (if that player's hand is not full). Play at any time (other than during a bid). Discard after use."
   },
   {
     "name": "Juice of Sappho",
     "type": "richese",
     "tags": "Special",
     "description": "Choose one:\n\nPlay this card to be considered the aggressor in a battle, or\n\nGo first for any phase or action that requires turn order, or\n\nGo last for any phase or action that requires turn order (even superseding Guild).\n\nPlay the card in the applicable phase when you wish to intervene. Discard after use."
+  },
+  {
+    "name": "Karama",
+    "type": "richese",
+    "tags": "Special",
+    "description": "After factions complete their 'At Start' actions and after game set-up, use this card to stop a player from using one of their faction advantages when they attempt to use it. Stops the use of that advantage during game phase.\n\nOr, this card may be used to do either of these things when appropriate:\n\n-Purchase a shipment of forces onto the planet at Guild rates (1/2 normal) paid to the Spice Bank, or\n\n-Purchase a Treachery Card without paying spice for it\n\nCannot be used to stop a win condition advantage. Discard after use."
   },
   {
     "name": "Mirror Weapon",
@@ -250,6 +256,12 @@
     "type": "richese",
     "tags": "Defense - Poison",
     "description": "Protects your leader from a poison weapon. You may play this after revealing your Battle Plan if you did not play a defense (unless prevented by a Bene Gesserit Voice). You may not play this if you played a weapon and a worthless card in your Battle Plan. Discard after use."
+  },
+  {
+    "name": "Residual poison",
+    "type": "richese",
+    "tags": "Special",
+    "description": "Play on your opponent before choosing leaders in a battle. That faction will lose one of their available leaders at random to the tanks. No spice is collected for it.\n\nDiscard after use."
   },
   {
     "name": "Semuta Drug",
