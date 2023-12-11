@@ -28,13 +28,13 @@ object SelectUtil {
         }.show()
     }
 
-    fun promptHouse(context: Context, available: List<Player>, callback: (Player) -> Unit) {
+    fun promptHouse(context: Context, title: String, available: List<Player>, callback: (Player) -> Unit) {
         val iconManager =
             ResourceLoader.getIconManager(context)
 
         prompt(
             context,
-            context.getString(R.string.add_player_title),
+            title,
             available,
             iconManager::get,
             Player::niceName,

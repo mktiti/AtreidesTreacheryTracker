@@ -9,6 +9,8 @@ All icons are from  Gale Force Nine's Dune (2019) game.
 
 <img src="/screenshots/dark_player.png" width="300"> | <img src="/screenshots/dark_add_card.png" width="300">
 
+<img src="/screenshots/dark_card_details.png" width="300"> | <img src="/screenshots/dark_change_owner.png" width="300">
+
 <img src="/screenshots/light_main_start.png" width="300">  |  <img src="/screenshots/light_players.png" width="300"> | <img src="/screenshots/light_add_player.png" width="300">
 
 <img src="/screenshots/light_player.png" width="300"> | <img src="/screenshots/light_add_card.png" width="300">

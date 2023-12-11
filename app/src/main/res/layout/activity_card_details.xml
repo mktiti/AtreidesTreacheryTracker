@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_coord"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CardDetailsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/card_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Defense - Poison" />
+
+            <TextView
+                android:id="@+id/card_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingTop="30dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Play as a part of your plan" />
+
+            <TextView
+                android:id="@+id/special_usage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingTop="30dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/change_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/add_player"
+        android:tint="#FFFFFF"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabCustomSize="65dp"
+        app:fabSize="normal"
+        app:maxImageSize="45dp"
+        app:srcCompat="@drawable/ic_baseline_person_add_24" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

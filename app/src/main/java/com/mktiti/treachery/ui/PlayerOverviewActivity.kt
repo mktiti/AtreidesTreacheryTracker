@@ -17,6 +17,7 @@ import com.mktiti.treachery.core.PlayerHand
 import com.mktiti.treachery.manager.ResourceLoader
 import java.util.concurrent.locks.ReentrantLock
 
+
 class PlayerOverviewActivity : AppCompatActivity() {
 
     private companion object {
@@ -43,7 +44,6 @@ class PlayerOverviewActivity : AppCompatActivity() {
             )?.let { HandState.parse(it).hands }
                 ?: Player.values().map { it.startHand() }
 
-
         playerAdapter = PlayerAdapter(
             ResourceLoader.getIconManager(this),
             state,
@@ -64,6 +64,7 @@ class PlayerOverviewActivity : AppCompatActivity() {
                 val available: List<Player> = Player.values().toList() - playerAdapter.stored.map { it.player }
                 SelectUtil.promptHouse(
                     this@PlayerOverviewActivity,
+                    this@PlayerOverviewActivity.getString(R.string.add_player_title),
                     available
                 ) { player ->
                     addPlayer(player.startHand())
@@ -95,14 +96,6 @@ class PlayerOverviewActivity : AppCompatActivity() {
         }
     }
 
-    private fun playerClick(player: PlayerHand) {
-        val intent = Intent(this, PlayerHandActivity::class.java)
-        intent.putExtra(PlayerHandActivity.HAND_DATA_KEY, player.json())
-        startActivityForResult(intent,
-            START_HAND
-        )
-    }
-
     private fun onPlayerUpdate() {
         if (canAdd(null)) {
             playerAdd.show()
@@ -111,15 +104,25 @@ class PlayerOverviewActivity : AppCompatActivity() {
         }
     }
 
+    private fun playerClick(playerHand: PlayerHand) {
+        val intent = Intent(this, PlayerHandActivity::class.java)
+        intent.putExtra(PlayerHandActivity.HAND_DATA_KEY, playerHand.json())
+        intent.putExtra(PlayerHandActivity.APPLICABLE_PLAYERS_FOR_CARD_TRANSFER, HandState(playerAdapter.stored).json())
+        startActivityForResult(intent, START_HAND)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == START_HAND) {
             if (resultCode == Activity.RESULT_OK) {
                 val jsonData = data?.getStringExtra(PlayerHandActivity.HAND_DATA_KEY) ?: return
-                val hand =
-                    PlayerHand.parse(jsonData)
+                val hand = PlayerHand.parse(jsonData)
                 playerAdapter.update(hand)
+
+                hand.cardTransfers.forEach { cardTransfer ->
+                    playerAdapter.changeOwner(cardTransfer.card, cardTransfer.previousOwner, cardTransfer.newOwner)
+                }
             }
         }
     }
