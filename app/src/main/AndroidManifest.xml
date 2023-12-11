@@ -17,6 +17,9 @@
             android:name=".ui.PlayerHandActivity"
             android:label="@string/title_activity_player_hand" />
         <activity
+            android:name=".ui.AddCardActivity"
+            android:label="@string/title_activity_add_card" />
+        <activity
             android:name=".ui.CardDetailsActivity"
             android:label="@string/title_activity_card_details" />
         <activity

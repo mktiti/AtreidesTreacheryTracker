@@ -3,10 +3,8 @@ package com.mktiti.treachery.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +19,7 @@ class PlayerHandActivity : AppCompatActivity() {
 
     companion object {
         const val SHOW_CARD_DETAILS = 1
+        const val SHOW_CARDS_TO_ADD = 2
         const val HAND_DATA_KEY = "hand_data"
         const val APPLICABLE_PLAYERS_FOR_CARD_TRANSFER = "applicable_players_for_card_transfer"
     }
@@ -29,7 +28,8 @@ class PlayerHandActivity : AppCompatActivity() {
 
     private lateinit var player: Player
     private lateinit var handAdapter: HandAdapter
-    private lateinit var cardList: RecyclerView
+
+    private lateinit var cardListView: RecyclerView
     private lateinit var cardTransfers: MutableList<CardTransfer>
 
     private lateinit var notes: EditText
@@ -68,20 +68,18 @@ class PlayerHandActivity : AppCompatActivity() {
             this::onCardDelete,
             this::showCardRequest
         )
-        cardList = findViewById<RecyclerView>(R.id.card_list).apply {
+        cardListView = findViewById<RecyclerView>(R.id.card_list).apply {
             layoutManager = LinearLayoutManager(context)
             adapter = handAdapter
         }
         val callback = SwipeDeleteCallback {
             handAdapter -= it
         }
-        ItemTouchHelper(callback).attachToRecyclerView(cardList)
+        ItemTouchHelper(callback).attachToRecyclerView(cardListView)
 
         cardAdd = findViewById<FloatingActionButton>(R.id.card_add).apply {
             setOnClickListener {
-                SelectUtil.promptCard(this@PlayerHandActivity) { card ->
-                    addCard(card)
-                }
+                showCardsToAddRequest()
             }
         }
 
@@ -129,6 +127,12 @@ class PlayerHandActivity : AppCompatActivity() {
         startActivityForResult(intent, SHOW_CARD_DETAILS)
     }
 
+    private fun showCardsToAddRequest() {
+        val intent = Intent(this, AddCardActivity::class.java)
+        startActivityForResult(intent, SHOW_CARDS_TO_ADD)
+    }
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -137,11 +141,19 @@ class PlayerHandActivity : AppCompatActivity() {
                 val jsonData = data?.getStringExtra(CardDetailsActivity.CARD_DATA_KEY) ?: return
                 val cardState = CardState.parse(jsonData)
                 if (cardState.newOwner != null) {
-                    cardList.findViewHolderForAdapterPosition(cardState.cardPosition)?.let {
+                    cardListView.findViewHolderForAdapterPosition(cardState.cardPosition)?.let {
                         handAdapter.cardTransferred(it)
                         cardTransfers.add(CardTransfer(cardState.owner, cardState.newOwner, cardState.card))
                     }
                 }
+            }
+        }
+
+        if (requestCode == SHOW_CARDS_TO_ADD) {
+            if (resultCode == Activity.RESULT_OK) {
+                val jsonData = data?.getStringExtra(AddCardActivity.ADD_CARD_DATA_KEY) ?: return
+                val card = Card.parse(jsonData)
+                addCard(card)
             }
         }
     }

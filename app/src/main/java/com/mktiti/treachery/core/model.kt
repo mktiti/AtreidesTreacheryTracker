@@ -43,7 +43,17 @@ data class Card(
     val tags: String,
     val description: String,
     val choam: String?
-)
+){
+
+    companion object {
+        val gson = Gson()
+
+        fun parse(jsonValue: String): Card = gson.fromJson(jsonValue, Card::class.java)
+    }
+
+    fun json(): String = Card.gson.toJson(this)
+}
+
 
 enum class Player(
     val id: String,
@@ -52,6 +62,7 @@ enum class Player(
     private val startingCards: Int = 1
 ) {
     BIDDING("bidding", "Bidding", 8),
+    DISCARD_PILE("discard_pile", "Discard Pile", 200),
     EMPEROR("emperor", "Emperor"),
     HARKONNEN("harkonnen", "Harkonnen", 8, 2),
     GUILD("guild", "Spacing Guild"),
@@ -60,7 +71,9 @@ enum class Player(
     IXIANS("ixians", "Ixians"),
     TLEILAXU("tleilaxu", "Tleilaxu"),
     CHOAM("choam", "Choam", 5),
-    RICHESE("richese", "Richese");
+    RICHESE("richese", "Richese"),
+    ECAZ("ecaz", "Ecaz"),
+    MORITANI("moritani", "Moritani");
 
 
 

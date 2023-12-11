@@ -1,48 +1,25 @@
 [
   {
-    "name": "Karama",
-    "type": "karama",
+    "name": "Amal",
+    "type": "special",
     "tags": "Special",
-    "description": "After factions complete their 'At Start' actions and after game set-up, use this card to stop a player from using one of their faction advantages when they attempt to use it. Stops the use of that advantage during game phase.\n\nOr, this card may be used to do either of these things when appropriate:\n\n-Purchase a shipment of forces onto the planet at Guild rates (1/2 normal) paid to the Spice Bank, or\n\n-Purchase a Treachery Card without paying spice for it\n\nCannot be used to stop a win condition advantage. Discard after use."
+    "description": "At the beginning of any phase, cause all players to discard half of the spice behind their shields, rounded up, to the Spice Bank."
   },
   {
-    "name": "Chrysknife",
-    "type": "projectile",
-    "tags": "Weapon - Projectile",
-    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
+    "name": "Artillery Strike",
+    "type": "special_weapon",
+    "tags": "Weapon - Special",
+    "description": "Play as part of your Battle Plan.\n\nKills both leaders. Both players may use Shields to protect their leader against the Artillery Strike.\n\nSurviving (shielded) leaders do not count towards the battle total; the side that dialed higher wins the battle. No spice is collected for any leader killed in this battle. Discard after use."
   },
   {
-    "name": "Hunter Seeker",
-    "type": "projectile",
-    "tags": "Weapon - Projectile",
-    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Maula Pistol",
-    "type": "projectile",
-    "tags": "Weapon - Projectile",
-    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Slip Tip",
-    "type": "projectile",
-    "tags": "Weapon - Projectile",
-    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Stunner",
-    "type": "projectile",
-    "tags": "Weapon - Projectile",
-    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
+    "name": "Baliset",
+    "type": "worthless",
+    "tags": "Worthless Card",
+    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
+    "choam": "Prevent a player from moving forces into a territory you occupy\nduring Shipment and Movement. They may ship in normally."
   },
   {
     "name": "Basilia Weapon",
-    "type": "poison",
-    "tags": "Weapon - Poison",
-    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Chaumas",
     "type": "poison",
     "tags": "Weapon - Poison",
     "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
@@ -54,34 +31,10 @@
     "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
   },
   {
-    "name": "Ellaca Drug",
+    "name": "Chaumas",
     "type": "poison",
     "tags": "Weapon - Poison",
     "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Gom Jabbar",
-    "type": "poison",
-    "tags": "Weapon - Poison",
-    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Poison Tooth",
-    "type": "poison",
-    "tags": "Weapon - Poison - Special",
-    "description": "Play as part of your Battle Plan.\n\nKills both leaders, and is not stopped by a Snooper.\n\nAfter seeing the battle results, you may choose not to use this weapon. If you win this battle and did not use this card, you may keep it. Otherwise, it is discarded."
-  },
-  {
-    "name": "Shield",
-    "type": "shield",
-    "tags": "Defense - Projectile",
-    "description": "Play as part of your Battle Plan.\n\nProtects your leader from a projectile weapon in this battle.\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Snooper",
-    "type": "snooper",
-    "tags": "Defense - Poison",
-    "description": "Play as part of your Battle Plan.\n\nProtects your leader from a poison weapon in this battle.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Cheap Hero",
@@ -90,28 +43,28 @@
     "description": "Play as a leader with zero strength on your Battle Plan and discard after the battle.\n\nYou may also play a weapon and defense. The cheap hero may be played in place of a leader or when you have no leaders available."
   },
   {
-    "name": "Lasgun",
-    "type": "special_weapon",
-    "tags": "Weapon - Special",
-    "description": "Play as part of your Battle Plan.\n\nAutomatically kills opponent's leader regardless of defense card used.\n\nYou may keep this card if you win this battle.\n\nIf anyone plays a Shield in this battle, all forces, leaders, and spice in this battle's territory are lost to the Tleilaxu Tanks and Spice Bank. Both players lose this battle, no spice is paid for leaders, and all cards played are discarded."
+    "name": "Chemistry",
+    "type": "special_defense",
+    "tags": "Defense - Weapon - Poison - Special",
+    "description": "Play as part of your Battle Plan.\n\nCounts as a Poison defense, unless played with another defense. In that case, it counts as a Poison weapon.\n\nYou may keep this card if you win this battle."
   },
   {
-    "name": "Poison Blade",
-    "type": "special_weapon",
-    "tags": "Weapon - Projectile - Poison - Special",
-    "description": "Play as part of your Battle Plan.\n\nThis weapon counts as both Projectile and Poison.\n\nYou may keep this card if you win this battle."
+    "name": "Chrysknife",
+    "type": "projectile",
+    "tags": "Weapon - Projectile",
+    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
   },
   {
-    "name": "Weirding Way",
-    "type": "special_weapon",
-    "tags": "Weapon - Defense - Projectile - Special",
-    "description": "Play as part of your Battle Plan.\n\nCounts as a Projectile weapon, unless played with another weapon. In that case, it counts as a Projectile defense.\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Amal",
-    "type": "special",
+    "name": "Distrans",
+    "type": "richese",
     "tags": "Special",
-    "description": "At the beginning of any phase, cause all players to discard half of the spice behind their shields, rounded up, to the Spice Bank."
+    "description": "Give another player a Treachery Card from your hand (if that player's hand is not full). Play at any time (other than during a bid). Discard after use."
+  },
+  {
+    "name": "Ellaca Drug",
+    "type": "poison",
+    "tags": "Weapon - Poison",
+    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Family Atomics",
@@ -120,10 +73,22 @@
     "description": "After the first game turn, play after the storm movement is calculated, but before the storm is moved, but only if you have one or more forces on the Shield Wall or a territory adjacent to the Shield Wall with no storm between your sector and the Wall.\n\nAll forces on the Shield Wall are destroyed.\n\nPlace the Destroyed Shield Wall token on the Shield Wall as a reminder. The Imperial Basin, Arrakeen and Carthag are no longer protected from the Storm for the rest of the game."
   },
   {
+    "name": "Gom Jabbar",
+    "type": "poison",
+    "tags": "Weapon - Poison",
+    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Snooper.\n\nYou may keep this card if you win this battle."
+  },
+  {
     "name": "Hajr (movement)",
     "type": "hajr",
     "tags": "Special - Movement",
     "description": "Play during the Movement Phase.\n\nMake an extra on-planet force movement subject to normal movement rules.\n\nThe forces you move may be a group you've already moved this phase or another group."
+  },
+  {
+    "name": "Harass & Withdraw",
+    "type": "special",
+    "tags": "Special",
+    "description": "Play as part of your Battle Plan in place of a weapon or defense.\n\nYour undialed forces return to your reserves.Your leader may still be killed normally. If your opponent calls Traitor, this effect is canceled. A Face Dancer called on your leader has no effect on your undialed forces. Do not use when on your Homeworld. Discard after use."
   },
   {
     "name": "Harvester",
@@ -132,47 +97,10 @@
     "description": "Play just after a spice blow comes up. Doubles the spice blow. Place double the amount of spice in the territory."
   },
   {
-    "name": "Thumper",
-    "type": "special",
-    "tags": "Spice Blow - Special",
-    "description": "Play at beginning of the Spice Blow Phase instead of revealing the next Spice Blow card. Causes a Sandworm to appear.\n\nPlay proceeds as though Shai-Hulud has been revealed."
-  },
-  {
-    "name": "Truthtrance",
-    "type": "truthtrance",
-    "tags": "Special",
-    "description": "Publicly ask one player a single yes/no question about the game that must be answered publicly. The game pauses until an answer is given.\n\nThe player must answer 'yes' or 'no' truthfully."
-  },
-  {
-    "name": "Tleilaxu Ghola",
-    "type": "ghola",
-    "tags": "Special",
-    "description": "Play at any time to gain an extra revival.\n\nYou may immediately revive 1 of your leaders regardless of how many leaders you have in the tanks or up to 5 of your forces from the Tleilaxu Tanks to your reserves at no cost in spice.\n\nYou still get your normal revivals."
-  },
-  {
-    "name": "Weather Control",
-    "type": "special",
-    "tags": "Special - Storm",
-    "description": "After the first game turn, play during the Storm Phase before the Storm Marker is moved.\n\nWhen you play this card, you control the storm this phase and may move it from 0 to 10 sectors in a counterclockwise direction."
-  },
-  {
-    "name": "Chemistry",
-    "type": "special_defense",
-    "tags": "Defense - Weapon - Poison - Special",
-    "description": "Play as part of your Battle Plan.\n\nCounts as a Poison defense, unless played with another defense. In that case, it counts as a Poison weapon.\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Shield Snooper",
-    "type": "special_defense",
-    "tags": "Defense - Projectile - Poison - Special",
-    "description": "Play as part of your Battle Plan.\n\nCounts as both a Shield (Projectile defense) and Snooper (Poison defense).\n\nYou may keep this card if you win this battle."
-  },
-  {
-    "name": "Baliset",
-    "type": "worthless",
-    "tags": "Worthless Card",
-    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
-    "choam": "Prevent a player from moving forces into a territory you occupy\nduring Shipment and Movement. They may ship in normally."
+    "name": "Hunter Seeker",
+    "type": "projectile",
+    "tags": "Weapon - Projectile",
+    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Jubba Cloak",
@@ -180,6 +108,24 @@
     "tags": "Worthless Card",
     "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
     "choam": "Prevent a loss of your forces in one territory to the Storm\nwhen it moves."
+  },
+  {
+    "name": "Juice of Sappho",
+    "type": "richese",
+    "tags": "Special",
+    "description": "Choose one:\n\nPlay this card to be considered the aggressor in a battle, or\n\nGo first for any phase or action that requires turn order, or\n\nGo last for any phase or action that requires turn order (even superseding Guild).\n\nPlay the card in the applicable phase when you wish to intervene. Discard after use."
+  },
+  {
+    "name": "Karama",
+    "type": "karama",
+    "tags": "Special",
+    "description": "After factions complete their 'At Start' actions and after game set-up, use this card to stop a player from using one of their faction advantages when they attempt to use it. Stops the use of that advantage during game phase.\n\nOr, this card may be used to do either of these things when appropriate:\n\n-Purchase a shipment of forces onto the planet at Guild rates (1/2 normal) paid to the Spice Bank, or\n\n-Purchase a Treachery Card without paying spice for it\n\nCannot be used to stop a win condition advantage. Discard after use."
+  },
+  {
+    "name": "Karama",
+    "type": "richese",
+    "tags": "Special",
+    "description": "After factions complete their 'At Start' actions and after game set-up, use this card to stop a player from using one of their faction advantages when they attempt to use it. Stops the use of that advantage during game phase.\n\nOr, this card may be used to do either of these things when appropriate:\n\n-Purchase a shipment of forces onto the planet at Guild rates (1/2 normal) paid to the Spice Bank, or\n\n-Purchase a Treachery Card without paying spice for it\n\nCannot be used to stop a win condition advantage. Discard after use."
   },
   {
     "name": "Kull Wahad",
@@ -196,6 +142,12 @@
     "choam": "Move your forces one extra territory on your turn in Shipping and\nMovement."
   },
   {
+    "name": "Lasgun",
+    "type": "special_weapon",
+    "tags": "Weapon - Special",
+    "description": "Play as part of your Battle Plan.\n\nAutomatically kills opponent's leader regardless of defense card used.\n\nYou may keep this card if you win this battle.\n\nIf anyone plays a Shield in this battle, all forces, leaders, and spice in this battle's territory are lost to the Tleilaxu Tanks and Spice Bank. Both players lose this battle, no spice is paid for leaders, and all cards played are discarded."
+  },
+  {
     "name": "La, La, La",
     "type": "worthless",
     "tags": "Worthless Card",
@@ -203,35 +155,10 @@
     "choam": "Prevent a player from taking Free Revival during Revival."
   },
   {
-    "name": "Trip to Gamont",
-    "type": "worthless",
-    "tags": "Worthless Card",
-    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
-    "choam": "Send any 1 force belonging to another player to that\nplayer’s reserves during the Mentat Pause"
-  },
-  {
-    "name": "Artillery Strike",
-    "type": "special_weapon",
-    "tags": "Weapon - Special",
-    "description": "Play as part of your Battle Plan.\n\nKills both leaders. Both players may use Shields to protect their leader against the Artillery Strike.\n\nSurviving (shielded) leaders do not count towards the battle total; the side that dialed higher wins the battle. No spice is collected for any leader killed in this battle. Discard after use."
-  },
-  {
-    "name": "Distrans",
-    "type": "richese",
-    "tags": "Special",
-    "description": "Give another player a Treachery Card from your hand (if that player's hand is not full). Play at any time (other than during a bid). Discard after use."
-  },
-  {
-    "name": "Juice of Sappho",
-    "type": "richese",
-    "tags": "Special",
-    "description": "Choose one:\n\nPlay this card to be considered the aggressor in a battle, or\n\nGo first for any phase or action that requires turn order, or\n\nGo last for any phase or action that requires turn order (even superseding Guild).\n\nPlay the card in the applicable phase when you wish to intervene. Discard after use."
-  },
-  {
-    "name": "Karama",
-    "type": "richese",
-    "tags": "Special",
-    "description": "After factions complete their 'At Start' actions and after game set-up, use this card to stop a player from using one of their faction advantages when they attempt to use it. Stops the use of that advantage during game phase.\n\nOr, this card may be used to do either of these things when appropriate:\n\n-Purchase a shipment of forces onto the planet at Guild rates (1/2 normal) paid to the Spice Bank, or\n\n-Purchase a Treachery Card without paying spice for it\n\nCannot be used to stop a win condition advantage. Discard after use."
+    "name": "Maula Pistol",
+    "type": "projectile",
+    "tags": "Weapon - Projectile",
+    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
   },
   {
     "name": "Mirror Weapon",
@@ -252,16 +179,95 @@
     "description": "As part of your movement, you may move one group of your forces up to 3 territories, or move 2 different groups of your forces up to your normal movement. Discard after use."
   },
   {
+    "name": "Poison Blade",
+    "type": "special_weapon",
+    "tags": "Weapon - Projectile - Poison - Special",
+    "description": "Play as part of your Battle Plan.\n\nThis weapon counts as both Projectile and Poison.\n\nYou may keep this card if you win this battle."
+  },
+  {
+    "name": "Poison Tooth",
+    "type": "poison",
+    "tags": "Weapon - Poison - Special",
+    "description": "Play as part of your Battle Plan.\n\nKills both leaders, and is not stopped by a Snooper.\n\nAfter seeing the battle results, you may choose not to use this weapon. If you win this battle and did not use this card, you may keep it. Otherwise, it is discarded."
+  },
+  {
     "name": "Portable Snooper",
     "type": "richese",
     "tags": "Defense - Poison",
     "description": "Protects your leader from a poison weapon. You may play this after revealing your Battle Plan if you did not play a defense (unless prevented by a Bene Gesserit Voice). You may not play this if you played a weapon and a worthless card in your Battle Plan. Discard after use."
   },
   {
+    "name": "Recruits",
+    "type": "special",
+    "tags": "Special - Revival",
+    "description": "Play during Revival.\n\nAll factions double their current Free Revival rates. The normal revival limit is increased to 7.\n\nDiscard after use."
+  },
+  {
+    "name": "Reinforcements",
+    "type": "special",
+    "tags": "Special",
+    "description": "Play as part of your Battle Plan in place of a weapon or defense.\n\nAdd +2 to your dialed number, then send 3 forces from your reserves to the Tanks.\n\nYou may not use this card if you do not have at least 3 forces in your reserves. Discard after use."
+  },
+  {
     "name": "Residual poison",
     "type": "richese",
     "tags": "Special",
     "description": "Play on your opponent before choosing leaders in a battle. That faction will lose one of their available leaders at random to the tanks. No spice is collected for it.\n\nDiscard after use."
+  },
+  {
+    "name": "Shield",
+    "type": "shield",
+    "tags": "Defense - Projectile",
+    "description": "Play as part of your Battle Plan.\n\nProtects your leader from a projectile weapon in this battle.\n\nYou may keep this card if you win this battle."
+  },
+  {
+    "name": "Shield Snooper",
+    "type": "special_defense",
+    "tags": "Defense - Projectile - Poison - Special",
+    "description": "Play as part of your Battle Plan.\n\nCounts as both a Shield (Projectile defense) and Snooper (Poison defense).\n\nYou may keep this card if you win this battle."
+  },
+  {
+    "name": "Slip Tip",
+    "type": "projectile",
+    "tags": "Weapon - Projectile",
+    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
+  },
+  {
+    "name": "Snooper",
+    "type": "snooper",
+    "tags": "Defense - Poison",
+    "description": "Play as part of your Battle Plan.\n\nProtects your leader from a poison weapon in this battle.\n\nYou may keep this card if you win this battle."
+  },
+  {
+    "name": "Stunner",
+    "type": "projectile",
+    "tags": "Weapon - Projectile",
+    "description": "Play as part of your Battle Plan.\n\nKills opponent's leader before battle is resolved. Opponent may protect leader with a Shield.\n\nYou may keep this card if you win this battle."
+  },
+  {
+    "name": "Thumper",
+    "type": "special",
+    "tags": "Spice Blow - Special",
+    "description": "Play at beginning of the Spice Blow Phase instead of revealing the next Spice Blow card. Causes a Sandworm to appear.\n\nPlay proceeds as though Shai-Hulud has been revealed."
+  },
+  {
+    "name": "Tleilaxu Ghola",
+    "type": "ghola",
+    "tags": "Special",
+    "description": "Play at any time to gain an extra revival.\n\nYou may immediately revive 1 of your leaders regardless of how many leaders you have in the tanks or up to 5 of your forces from the Tleilaxu Tanks to your reserves at no cost in spice.\n\nYou still get your normal revivals."
+  },
+  {
+    "name": "Truthtrance",
+    "type": "truthtrance",
+    "tags": "Special",
+    "description": "Publicly ask one player a single yes/no question about the game that must be answered publicly. The game pauses until an answer is given.\n\nThe player must answer 'yes' or 'no' truthfully."
+  },
+  {
+    "name": "Trip to Gamont",
+    "type": "worthless",
+    "tags": "Worthless Card",
+    "description": "Play as part of your Battle Plan, in place of a weapon, defense, or both.\n\nThis card has no value in play, and you can discard it only by playing it in your Battle Plan.",
+    "choam": "Send any 1 force belonging to another player to that\nplayer’s reserves during the Mentat Pause"
   },
   {
     "name": "Semuta Drug",
@@ -274,6 +280,18 @@
     "type": "richese",
     "tags": "Weapon - Special",
     "description": "You choose after the battle plans are revealed: Both leaders are killed, OR both leaders in this battle do not count their strength if they otherwise survived. In either case, the player with the higher number of undialed force tokens wins the battle. Dialed forces are lost normally. Discard after use."
+  },
+  {
+    "name": "Weather Control",
+    "type": "special",
+    "tags": "Special - Storm",
+    "description": "After the first game turn, play during the Storm Phase before the Storm Marker is moved.\n\nWhen you play this card, you control the storm this phase and may move it from 0 to 10 sectors in a counterclockwise direction."
+  },
+  {
+    "name": "Weirding Way",
+    "type": "special_weapon",
+    "tags": "Weapon - Defense - Projectile - Special",
+    "description": "Play as part of your Battle Plan.\n\nCounts as a Projectile weapon, unless played with another weapon. In that case, it counts as a Projectile defense.\n\nYou may keep this card if you win this battle."
   }
 ]
 

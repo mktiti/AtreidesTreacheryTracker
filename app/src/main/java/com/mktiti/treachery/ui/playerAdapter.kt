@@ -31,8 +31,14 @@ class PlayerAdapter(
     private val players = if(initPlayers.isNotEmpty())
                                 initPlayers.toMutableList()
                             else
-                                mutableListOf<PlayerHand>(PlayerHand(Player.BIDDING, listOf<Card?>(), "")
-                );
+                                mutableListOf<PlayerHand>(
+                                    PlayerHand(
+                                        Player.BIDDING,
+                                        listOf<Card?>(),
+                                        ""
+                                    ),
+                                    PlayerHand(Player.DISCARD_PILE, listOf<Card?>(), "")
+                                );
 
     val stored: List<PlayerHand>
         get() = players
@@ -71,11 +77,19 @@ class PlayerAdapter(
                 holder.cardsLayout.addView(cardIcon)
             }
 
+            var shownCards = 0
             cards.forEach { card ->
+                shownCards += 1
+                if(shownCards > 16)  {
+                    return@forEach
+                }
                 addIcon(if (card == null) iconManager.unknownCard() else iconManager[card.type])
             }
-
             repeat(player.maxCards - cards.size) {
+                shownCards += 1
+                if(shownCards > 16)  {
+                    return@repeat
+                }
                 addIcon(iconManager.noCard())
             }
         }
