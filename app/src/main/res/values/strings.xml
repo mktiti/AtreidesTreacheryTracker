@@ -1,20 +1,19 @@
 <resources>
     <string name="app_name">Atreides Treachery Tracker</string>
 
+    <string name="faction.name.bidding">Bidding</string>
     <string name="faction.name.emperor">Emperor</string>
     <string name="faction.name.harkonnen">House Harkonnen</string>
     <string name="faction.name.guild">Space Guild</string>
     <string name="faction.name.benegesserit">Bene Gesserit</string>
     <string name="faction.name.fremen">Fremen</string>
+    <string name="faction.name.ixians">Ixians</string>
+    <string name="faction.name.tleilaxu">Tleilaxu</string>
+    <string name="faction.name.choam">Choam</string>
+    <string name="faction.name.richese">Richese</string>
+    <string name="faction.name.ecaz">Ecaz</string>
+    <string name="faction.name.moritani">Moritani</string>
 
-    <string name="card.type.name.projectile">Projectile</string>
-    <string name="card.type.name.shield">Projectile shield</string>
-    <string name="card.type.name.poison">Poison</string>
-    <string name="card.type.name.snooper">Poison snooper</string>
-    <string name="card.type.name.lasgun">Lasgun</string>
-    <string name="card.type.name.cheap_hero">Cheap hero</string>
-    <string name="card.type.name.worthless">Worthless</string>
-    <string name="card.type.name.special">Special</string>
     <string name="title_activity_player_overview">Players</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -29,11 +28,15 @@
     <string name="player_remove_undo">Undo</string>
     <string name="player_removed">Player removed</string>
     <string name="title_activity_player_hand">PlayerHandActivity</string>
+    <string name="title_activity_add_card">AddCardActivity</string>
     <string name="card_icon">Card icon</string>
     <string name="unknown">Unknown card</string>
     <string name="unknown_type">Unknown</string>
     <string name="notes">Notes:</string>
     <string name="card_removed">Card removed</string>
+    <string name="change_owner_title">Change owner</string>
+    <string name="change_owner_undo">Change owner undo</string>
+    <string name="card_changed_owner">Card changed owner</string>
     <string name="select_type">Select card type</string>
     <string name="card_type">Card type:</string>
     <string name="card">Card:</string>
@@ -41,5 +44,6 @@
     <string name="add_card">Add card</string>
     <string name="add_unknown">Add unknown</string>
     <string name="add_player">Add player</string>
+    <string name="title_activity_card_details">CardDetailsActivity</string>
 
 </resources>
