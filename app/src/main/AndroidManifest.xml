@@ -9,11 +9,6 @@
         android:supportsRtl="true"
         android:theme="@style/BaseTheme">
         <activity
-            android:name=".CardDetailsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_card_details"
-            android:theme="@style/BaseTheme.NoActionBar" />
-        <activity
             android:name=".ui.PlayerHandActivity"
             android:label="@string/title_activity_player_hand" />
         <activity
@@ -21,10 +16,12 @@
             android:label="@string/title_activity_add_card" />
         <activity
             android:name=".ui.CardDetailsActivity"
-            android:label="@string/title_activity_card_details" />
+            android:label="@string/title_activity_card_details"
+            android:theme="@style/BaseTheme.NoActionBar"/>
         <activity
             android:name=".ui.PlayerOverviewActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

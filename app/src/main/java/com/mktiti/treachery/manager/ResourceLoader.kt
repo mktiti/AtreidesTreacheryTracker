@@ -12,7 +12,7 @@ object ResourceLoader {
     private var singleton: IconManager? = null
 
     private fun loadImage(context: Context, file: String): Drawable {
-        return Drawable.createFromStream(context.assets.open(file), null)
+        return Drawable.createFromStream(context.assets.open(file), null) ?: error("Failed to load drawable $file")
     }
 
     private inline fun <reified E : Enum<E>> loadAssetIcons(context: Context, folder: String, mapper: (E) -> String): Map<E, Drawable> {
